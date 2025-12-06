@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B73474EF2ECE9E9C004C89FE /* FerrisSensingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73474EE2ECE9E9C004C89FE /* FerrisSensingApp.swift */; };
+		B73474F12ECE9E9C004C89FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73474F02ECE9E9C004C89FE /* ContentView.swift */; };
+		B73474F32ECE9E9C004C89FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73474F22ECE9E9C004C89FE /* Assets.xcassets */; };
+		B73474F62ECE9E9C004C89FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B73474F52ECE9E9C004C89FE /* Preview Assets.xcassets */; };
+		B73475012ECEA227004C89FE /* ferriswheels.json in Resources */ = {isa = PBXBuildFile; fileRef = B73475002ECEA227004C89FE /* ferriswheels.json */; };
+		B734750B2ECEA3D6004C89FE /* FerrisWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734750A2ECEA3D6004C89FE /* FerrisWheel.swift */; };
+		B73475112ECEA55D004C89FE /* AppPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73475102ECEA55D004C89FE /* AppPhase.swift */; };
+		B7D8A5BF2ECEA5D000072114 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5BE2ECEA5D000072114 /* LocationManager.swift */; };
+		B7D8A5C12ECEA60100072114 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5C02ECEA60100072114 /* SensorManager.swift */; };
+		B7D8A5C42ECF04C100072114 /* NonlinearCosineFitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5C32ECF04C100072114 /* NonlinearCosineFitter.swift */; };
+		B7D8A5C62ECF056800072114 /* fit_test_higashiyama_15.json in Resources */ = {isa = PBXBuildFile; fileRef = B7D8A5C52ECF056800072114 /* fit_test_higashiyama_15.json */; };
+		B7D8A5C82ECF0F3000072114 /* BarometerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5C72ECF0F3000072114 /* BarometerFilter.swift */; };
+		B7D8A5CE2ECF143200072114 /* TestBarometerFilterOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5CD2ECF143200072114 /* TestBarometerFilterOffline.swift */; };
+		B7D8A5D22ECF197A00072114 /* Barometer.csv in Resources */ = {isa = PBXBuildFile; fileRef = B7D8A5D12ECF197A00072114 /* Barometer.csv */; };
+		B7D8A5D42ECFFC7000072114 /* TopStabilityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5D32ECFFC7000072114 /* TopStabilityTracker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B73474EB2ECE9E9C004C89FE /* FerrisSensing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FerrisSensing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73474EE2ECE9E9C004C89FE /* FerrisSensingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerrisSensingApp.swift; sourceTree = "<group>"; };
+		B73474F02ECE9E9C004C89FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B73474F22ECE9E9C004C89FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B73474F52ECE9E9C004C89FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B73475002ECEA227004C89FE /* ferriswheels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ferriswheels.json; sourceTree = "<group>"; };
+		B734750A2ECEA3D6004C89FE /* FerrisWheel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FerrisWheel.swift; sourceTree = "<group>"; };
+		B73475102ECEA55D004C89FE /* AppPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPhase.swift; sourceTree = "<group>"; };
+		B7D8A5BE2ECEA5D000072114 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B7D8A5C02ECEA60100072114 /* SensorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
+		B7D8A5C22ECEAD4700072114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B7D8A5C32ECF04C100072114 /* NonlinearCosineFitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonlinearCosineFitter.swift; sourceTree = "<group>"; };
+		B7D8A5C52ECF056800072114 /* fit_test_higashiyama_15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fit_test_higashiyama_15.json; path = "../../../観覧車センシング/0テストフォルダ/fit_test_higashiyama_15.json"; sourceTree = "<group>"; };
+		B7D8A5C72ECF0F3000072114 /* BarometerFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarometerFilter.swift; sourceTree = "<group>"; };
+		B7D8A5CD2ECF143200072114 /* TestBarometerFilterOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBarometerFilterOffline.swift; sourceTree = "<group>"; };
+		B7D8A5D12ECF197A00072114 /* Barometer.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Barometer.csv; sourceTree = "<group>"; };
+		B7D8A5D32ECFFC7000072114 /* TopStabilityTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStabilityTracker.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B73474E82ECE9E9C004C89FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B73474E22ECE9E9C004C89FE = {
+			isa = PBXGroup;
+			children = (
+				B73474ED2ECE9E9C004C89FE /* FerrisSensing */,
+				B73474EC2ECE9E9C004C89FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B73474EC2ECE9E9C004C89FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B73474EB2ECE9E9C004C89FE /* FerrisSensing.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B73474ED2ECE9E9C004C89FE /* FerrisSensing */ = {
+			isa = PBXGroup;
+			children = (
+				B7D8A5C22ECEAD4700072114 /* Info.plist */,
+				B73474EE2ECE9E9C004C89FE /* FerrisSensingApp.swift */,
+				B73474F02ECE9E9C004C89FE /* ContentView.swift */,
+				B7D8A5C72ECF0F3000072114 /* BarometerFilter.swift */,
+				B7D8A5CD2ECF143200072114 /* TestBarometerFilterOffline.swift */,
+				B734750A2ECEA3D6004C89FE /* FerrisWheel.swift */,
+				B73475102ECEA55D004C89FE /* AppPhase.swift */,
+				B73475002ECEA227004C89FE /* ferriswheels.json */,
+				B73474F42ECE9E9C004C89FE /* Preview Content */,
+				B73474F22ECE9E9C004C89FE /* Assets.xcassets */,
+				B7D8A5BE2ECEA5D000072114 /* LocationManager.swift */,
+				B7D8A5C02ECEA60100072114 /* SensorManager.swift */,
+				B7D8A5D32ECFFC7000072114 /* TopStabilityTracker.swift */,
+				B7D8A5C32ECF04C100072114 /* NonlinearCosineFitter.swift */,
+				B7D8A5C52ECF056800072114 /* fit_test_higashiyama_15.json */,
+				B7D8A5D12ECF197A00072114 /* Barometer.csv */,
+			);
+			path = FerrisSensing;
+			sourceTree = "<group>";
+		};
+		B73474F42ECE9E9C004C89FE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B73474F52ECE9E9C004C89FE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B73474EA2ECE9E9C004C89FE /* FerrisSensing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B73474F92ECE9E9C004C89FE /* Build configuration list for PBXNativeTarget "FerrisSensing" */;
+			buildPhases = (
+				B73474E72ECE9E9C004C89FE /* Sources */,
+				B73474E82ECE9E9C004C89FE /* Frameworks */,
+				B73474E92ECE9E9C004C89FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FerrisSensing;
+			productName = FerrisSensing;
+			productReference = B73474EB2ECE9E9C004C89FE /* FerrisSensing.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B73474E32ECE9E9C004C89FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					B73474EA2ECE9E9C004C89FE = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = B73474E62ECE9E9C004C89FE /* Build configuration list for PBXProject "FerrisSensing" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B73474E22ECE9E9C004C89FE;
+			productRefGroup = B73474EC2ECE9E9C004C89FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B73474EA2ECE9E9C004C89FE /* FerrisSensing */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B73474E92ECE9E9C004C89FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7D8A5D22ECF197A00072114 /* Barometer.csv in Resources */,
+				B73474F62ECE9E9C004C89FE /* Preview Assets.xcassets in Resources */,
+				B73475012ECEA227004C89FE /* ferriswheels.json in Resources */,
+				B73474F32ECE9E9C004C89FE /* Assets.xcassets in Resources */,
+				B7D8A5C62ECF056800072114 /* fit_test_higashiyama_15.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B73474E72ECE9E9C004C89FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B734750B2ECEA3D6004C89FE /* FerrisWheel.swift in Sources */,
+				B7D8A5C12ECEA60100072114 /* SensorManager.swift in Sources */,
+				B73474F12ECE9E9C004C89FE /* ContentView.swift in Sources */,
+				B7D8A5BF2ECEA5D000072114 /* LocationManager.swift in Sources */,
+				B7D8A5C42ECF04C100072114 /* NonlinearCosineFitter.swift in Sources */,
+				B7D8A5CE2ECF143200072114 /* TestBarometerFilterOffline.swift in Sources */,
+				B7D8A5D42ECFFC7000072114 /* TopStabilityTracker.swift in Sources */,
+				B73474EF2ECE9E9C004C89FE /* FerrisSensingApp.swift in Sources */,
+				B73475112ECEA55D004C89FE /* AppPhase.swift in Sources */,
+				B7D8A5C82ECF0F3000072114 /* BarometerFilter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B73474F72ECE9E9C004C89FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B73474F82ECE9E9C004C89FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B73474FA2ECE9E9C004C89FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FerrisSensing/Preview Content\"";
+				DEVELOPMENT_TEAM = P35GGS26VR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FerrisSensing/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "現在地付近の観覧車を自動的に選択するために位置情報を使用します。";
+				INFOPLIST_KEY_NSMotionUsageDescription = "観覧車乗車中の振動や動きを検出し、頂上到達タイミングを推定するためにモーションデータを使用します。";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fuma.FerrisSensing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B73474FB2ECE9E9C004C89FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FerrisSensing/Preview Content\"";
+				DEVELOPMENT_TEAM = P35GGS26VR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FerrisSensing/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "現在地付近の観覧車を自動的に選択するために位置情報を使用します。";
+				INFOPLIST_KEY_NSMotionUsageDescription = "観覧車乗車中の振動や動きを検出し、頂上到達タイミングを推定するためにモーションデータを使用します。";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fuma.FerrisSensing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B73474E62ECE9E9C004C89FE /* Build configuration list for PBXProject "FerrisSensing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B73474F72ECE9E9C004C89FE /* Debug */,
+				B73474F82ECE9E9C004C89FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B73474F92ECE9E9C004C89FE /* Build configuration list for PBXNativeTarget "FerrisSensing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B73474FA2ECE9E9C004C89FE /* Debug */,
+				B73474FB2ECE9E9C004C89FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B73474E32ECE9E9C004C89FE /* Project object */;
+}
