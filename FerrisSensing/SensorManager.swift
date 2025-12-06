@@ -85,6 +85,11 @@ final class SensorManager: ObservableObject {
     private var tMoveSelected: TimeInterval?                // 最終的に採用した t_move
     private var boardingDetected: Bool = false
     
+    // === Cosine fitting（リアルタイム）===
+     // boarding_time 以降の pFilt と時刻を貯めて maybeFit を回す
+    private var cosineFitter: NonlinearCosineFitter?
+    private var fitTimes: [TimeInterval] = []
+    private var fitPressures: [Double] = []
     
     
     private init() {}
@@ -133,6 +138,12 @@ final class SensorManager: ObservableObject {
         boardingTimeSec = nil
         tMoveSec = nil
         
+        // ★ 追加：Cosine フィット関連のリセット
+        cosineFitter = nil
+        fitTimes.removeAll()
+        fitPressures.removeAll()
+        estimatedTopTimeSec = nil
+        
         // ★ 追加：フィルタ & 頂上安定判定のリセット
         baroFilter.reset()
         baroFilter.clampUpwardUntilTop = true
@@ -173,7 +184,7 @@ final class SensorManager: ObservableObject {
         guard let boardingTimeSec = boardingTimeSec else { return }
         
         // 乗車からの経過時間（リアルタイムループの時刻系と同じ秒）
-        let now = Date().timeIntervalSince1970
+        let now = nowElapsed()
         let elapsed = now - boardingTimeSec
         
         // 頂上時刻（乗車からの相対時間）
@@ -190,7 +201,10 @@ final class SensorManager: ObservableObject {
         DispatchQueue.main.async {
             self.estimatedTopTimeSec = tTop
             self.isTopStable = isStable
-            // ここで appPhase を .topApproaching に変えるなども可
+            if isStable {
+                // 「頂上安定」になったタイミングから上昇禁止を解除
+                baroFilter.finishTopDetection()
+            }
         }
     }
 
@@ -315,14 +329,10 @@ final class SensorManager: ObservableObject {
         lastFilteredPressure = pFilt
         lastFilteredTime = t
         
-        // boarding 検出フェーズ以外ならここで終了
-        guard appPhase == .detectingBoarding else {
-            return
-        }
-        
-        // --- (3) dp/dt 閾値判定 → t_move 候補 ---
-        if let dpdt = dpdt {
-            if dpdt <= -dpdtThreshold {
+        switch appPhase {
+            case .detectingBoarding:
+            // --- (3) dp/dt 閾値判定 → t_move 候補 ---
+            if let dpdt = dpdt, dpdt <= -dpdtThreshold {
                 print(String(
                     format: "[BARO] dp/dt=%.5f hPa/s @ t=%.2f (threshold=%.5f)",
                     dpdt, t, dpdtThreshold
@@ -330,6 +340,13 @@ final class SensorManager: ObservableObject {
                 tMoveCandidates.append(t)
                 trySelectBoardingTime()
             }
+
+        case .estimatingTop:
+            // ★ 追加：boarding 以降の pFilt を貯めてフィット
+            handleTopEstimationRealtime(t: t, pFilt: pFilt)
+
+        default:
+            break
         }
     }
 
@@ -363,6 +380,9 @@ final class SensorManager: ObservableObject {
                 
                 // ここから先は頂上推定フェーズへ
                 appPhase = .estimatingTop
+                
+                // ★ 追加：boarding 確定時の初期化
+                prepareTopEstimationAfterBoarding(boardingTime: interval.start)
                 return
             } else {
                 print(String(format: "[BOARD] t_move=%.2f に対応する静止区間が見つからず", tMove))
@@ -371,6 +391,39 @@ final class SensorManager: ObservableObject {
         
         print("[BOARD] no valid boarding_time candidate yet")
     }
+    
+    // MARK: - boarding 確定後の頂上推定準備
+    private func prepareTopEstimationAfterBoarding(boardingTime: TimeInterval) {
+        fitTimes.removeAll()
+        fitPressures.removeAll()
+        
+        // c0Prior は boarding 直後の基準値として直近のフィルタ値を採用
+        let c0Prior = lastFilteredPressure ?? latestPressure_hPa
+        
+        cosineFitter = NonlinearCosineFitter(
+            heightM: currentWheelHeight,
+            tRef: estimatedPeriodSec,
+            c0Prior: c0Prior,
+            boardingTime: boardingTime
+        )
+    }
+    
+    // MARK: - リアルタイムのコサインフィット + 頂上安定判定
+    private func handleTopEstimationRealtime(t: TimeInterval, pFilt: Double) {
+        guard boardingTimeSec != nil else { return }
+        guard let fitter = cosineFitter else { return }
+        
+        // boarding_time 以降のログを蓄積
+        fitTimes.append(t)
+        fitPressures.append(pFilt)
+        
+        // Python 同様、一定間隔でフィットを試みる（内部で step/minDuration/R² により間引き）
+        if let result = fitter.maybeFit(times: fitTimes,pressures: fitPressures,currentTime: t) {
+            let p = result.params
+            handleCosineFitResult(t0: p.t0, T: p.T, c: p.c, r2: result.r2)
+        }
+    }
+            
     
     /// 条件:
     ///   ts <= t_move <= te + T_MOVE_MARGIN_SEC
