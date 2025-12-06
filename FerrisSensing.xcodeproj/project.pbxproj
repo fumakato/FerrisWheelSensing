@@ -17,7 +17,6 @@
 		B7D8A5BF2ECEA5D000072114 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5BE2ECEA5D000072114 /* LocationManager.swift */; };
 		B7D8A5C12ECEA60100072114 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5C02ECEA60100072114 /* SensorManager.swift */; };
 		B7D8A5C42ECF04C100072114 /* NonlinearCosineFitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5C32ECF04C100072114 /* NonlinearCosineFitter.swift */; };
-		B7D8A5C62ECF056800072114 /* fit_test_higashiyama_15.json in Resources */ = {isa = PBXBuildFile; fileRef = B7D8A5C52ECF056800072114 /* fit_test_higashiyama_15.json */; };
 		B7D8A5C82ECF0F3000072114 /* BarometerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5C72ECF0F3000072114 /* BarometerFilter.swift */; };
 		B7D8A5CE2ECF143200072114 /* TestBarometerFilterOffline.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D8A5CD2ECF143200072114 /* TestBarometerFilterOffline.swift */; };
 		B7D8A5D22ECF197A00072114 /* Barometer.csv in Resources */ = {isa = PBXBuildFile; fileRef = B7D8A5D12ECF197A00072114 /* Barometer.csv */; };
@@ -37,7 +36,7 @@
 		B7D8A5C02ECEA60100072114 /* SensorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 		B7D8A5C22ECEAD4700072114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B7D8A5C32ECF04C100072114 /* NonlinearCosineFitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonlinearCosineFitter.swift; sourceTree = "<group>"; };
-		B7D8A5C52ECF056800072114 /* fit_test_higashiyama_15.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = fit_test_higashiyama_15.json; path = "../../../観覧車センシング/0テストフォルダ/fit_test_higashiyama_15.json"; sourceTree = "<group>"; };
+		B7D8A5C52ECF056800072114 /* ferriswheels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ferriswheels.json; path = ../ferriswheels.json; sourceTree = "<group>"; };
 		B7D8A5C72ECF0F3000072114 /* BarometerFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarometerFilter.swift; sourceTree = "<group>"; };
 		B7D8A5CD2ECF143200072114 /* TestBarometerFilterOffline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBarometerFilterOffline.swift; sourceTree = "<group>"; };
 		B7D8A5D12ECF197A00072114 /* Barometer.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Barometer.csv; sourceTree = "<group>"; };
@@ -88,7 +87,7 @@
 				B7D8A5C02ECEA60100072114 /* SensorManager.swift */,
 				B7D8A5D32ECFFC7000072114 /* TopStabilityTracker.swift */,
 				B7D8A5C32ECF04C100072114 /* NonlinearCosineFitter.swift */,
-				B7D8A5C52ECF056800072114 /* fit_test_higashiyama_15.json */,
+				B7D8A5C52ECF056800072114 /* ferriswheels.json */,
 				B7D8A5D12ECF197A00072114 /* Barometer.csv */,
 			);
 			path = FerrisSensing;
@@ -164,7 +163,6 @@
 				B73474F62ECE9E9C004C89FE /* Preview Assets.xcassets in Resources */,
 				B73475012ECEA227004C89FE /* ferriswheels.json in Resources */,
 				B73474F32ECE9E9C004C89FE /* Assets.xcassets in Resources */,
-				B7D8A5C62ECF056800072114 /* fit_test_higashiyama_15.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
